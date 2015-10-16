@@ -1,0 +1,6 @@
+<html>
+<body>
+<button onclick="makePage();">New</button>
+</body>
+<script>
+    makePage = function() {
