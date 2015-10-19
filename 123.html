@@ -47,47 +47,7 @@ myCheckbox.onclick = checkme;
 myli.appendChild(myCheckbox);
 myli.appendChild(myItem);
 myUL.appendChild(myli);
-localSave();
-}
-var checkme = function(){
-if (this.checked){
-this.parentNode.classList.add("done");
-}
-else{
-this.parentNode.classList.remove("done");
-}
-localSave()
-}
-localSave = function() {
-	var res = []
-	var i;
-	allEntries = document.querySelectorAll('li')
-	for(i=0; i < allEntries.length; i++) {
-		if (! allEntries[i].classList.contains("done")) {
-		res.push(allEntries[i].innerText);
-		}
-	}
 
-	localStorage.setItem("shoppingStorage",JSON.stringify(res))
-}
-
-
-restoreList = function () {
-	allEntries = JSON.parse(localStorage.getItem('shoppingStorage'))
-	for (i=0; i < allEntries.length; i++){
-	
-	bl = document.querySelector("#grocerylist");
-	li = document.createElement('li');
-	cb= document.createElement("input");
-	cb.type = 'checkbox';
-	cb.onclick = checkme;	
-	li.appendChild(cb);
-	t= document.createTextNode(allEntries[i]);
-	li.appendChild(t);
-	bl.appendChild(li);
-	}
-	
-}
 
 </script>
 <script>
