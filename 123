@@ -6,6 +6,13 @@
 <body>
     <p> Enter task<p>
     
+    <select>
+        
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+        
+    </select>
     <label for ="thebox">Enter task</label>
     <input type="text" id="thebox">
     <button onclick="increment();">New</button> 
