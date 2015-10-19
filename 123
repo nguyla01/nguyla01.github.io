@@ -1,11 +1,55 @@
 <html>
+<head>
+<title> To do list app</title>
+</head>    
+
 <body>
-<button onclick="makePage();">New</button>
+    <p> Enter task<p>
+    
+    <label for ="thebox">Enter task</label>
+    <input type="text" id="thebox">
+    <button onclick="increment();">New</button> 
+      
+    <ul id="out">
+    </ul>
+    
+    <script>
+        //var count = 0;
+        
+        increment = function() {
+            mybox= document.querySelector("#thebox");
+            myitem= mybox.value;
+            //count = count + 1;
+            output = document.querySelector("#out");
+            newli = document.createElement("li");
+            
+            cb = document.createElement("input");
+            cb.type="checkbox";
+            newli.appendChild(cb);
+            te = document.createTextNode(myitem);
+            newli.appendChild(te);
+            
+            cb.onclick=select;
+            
+            
+            colorpicker=document.querySelector("#colorchooser");
+            theindex=colorpicker.selectedIndex;
+            theoption=colorpicker.options[theindex];
+            thecolor=theoption.value;
+            newli.classList.add(thecolor);
+            
+            
+            out.appendChild(newli);
+        }
+        
+        select = function() {
+            if (this.checked)
+               this.parentNode.classList.add("checkedoff");
+            else
+               this.parentNode.classList.remove("checkedoff");
+        }
+        
+    </script>
+    
 </body>
-<script>
-    makePage = function() {
-    
-    
-    
-    <script type="text/javascript"
-    src = "todo.js"></script>
+</html>
